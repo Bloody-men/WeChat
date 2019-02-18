@@ -364,7 +364,7 @@ width: 100%;
 }
 */
 /*排行榜style 纵排列 二*/
-/*.hdk-picture{
+.hdk-picture{
 	float:left;
 	width: 48%;
 	background: #fff;
@@ -387,9 +387,8 @@ width: 100%;
 .hdk-picture>a{
 	height: 200px;
 }
-*/
 /*排行榜style 纵排列 三*/
-
+/* 
 .hdk-picture{
 	float:left;
 	width: 31%;
@@ -436,7 +435,7 @@ width: 100%;
 .hdk-picture>a>img{
 	max-width: 500px;
 	border-radius: 5px;
-}
+} */
 /*---end---*/
 
 /*--player 样式--*/
