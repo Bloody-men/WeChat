@@ -4,7 +4,7 @@
 	padding: 0px;
 }
 li{
-	list-style: none;
+	list-style: none;		
 }
 body{
 	background: linear-gradient(to right, rgba(247,71,109,0.9),rgba(254,89,95,1));
@@ -62,7 +62,7 @@ a{
 	height:60px;
 	background: #fff;					
 	margin:0 auto;
-	display: flex;
+	display: -webkit-flex;
 	-webkit-justify-content: space-around;
 }
 .hdk-menu{
