@@ -3,9 +3,6 @@ $("button").click(function(){
 	$(".hdk-Advertisement").hide();			
 });
 //index页面 音乐点击旋转
-	$(function () {
-            $("#music")[0].play();
-        }, false);
     var $audioBtn = $('#audio-btn');
     $audioBtn.on('click', function () {
         var audio = document.getElementById('music');
