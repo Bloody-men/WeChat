@@ -7,8 +7,7 @@ $("button").click(function(){
     $audioBtn.on('click', function () {
         var audio = document.getElementById('music');
         if (audio.paused) {
-            audio.ready(function() {
-            audio.play();});
+            audio.play();
             $audioBtn.removeClass('off').addClass('on').find('div').addClass('rotate');
         } else {
             audio.pause();
