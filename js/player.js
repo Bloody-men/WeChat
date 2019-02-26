@@ -7,10 +7,10 @@ $("button").click(function(){
     $audioBtn.on('click', function () {
         var audio = document.getElementById('music');
         if (audio.paused) {
-            audio.play();
+            audioObj[0].play();
             $audioBtn.removeClass('off').addClass('on').find('div').addClass('rotate');
         } else {
-            audio.pause();
+            audioObj[0].pause();
             $audioBtn.removeClass('on').addClass('off').find('div').removeClass('rotate');
         }
     });
