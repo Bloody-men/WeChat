@@ -115,7 +115,8 @@ a{
 }
 /*----------------------*/
 /*音乐旋转动画*/
-.rotate{position: absolute;
+.rotate{
+    position: absolute;
     top: 10px;
     left: 10px;
     width: 30px;
@@ -123,6 +124,12 @@ a{
     background-image: url(../img/music_off.png);
     animation: music 2s linear infinite;}
 	@-webkit-keyframes music {
+	0% {transform: rotate(0deg);}
+	100% {transform: rotate(360deg);}
+	@-moz-keyframes music {
+	0% {transform: rotate(0deg);}
+	100% {transform: rotate(360deg);}
+	@-o-keyframes music {
 	0% {transform: rotate(0deg);}
 	100% {transform: rotate(360deg);}
 }
