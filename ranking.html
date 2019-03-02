@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>排行榜</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=yes">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+</head>
+<body>
+	<a name="gettop"></a>
+	<div class="hdk-skin">
+		<img src="img/cover.png">
+		<p>- 排行榜 -</p>
+		<div id="select">
+			<i></i>
+			<span class="checkspan">全部分组</span>
+			<ul>
+				<li data="1" class="click_change_bgcolor" style=" border-top: 1px dashed #eee;">李易峰</li>
+				<li data="2" class="click_change_bgcolor">杨洋</li>
+				<li data="3" class="click_change_bgcolor">陈伟霆</li>
+				<li data="4" class="click_change_bgcolor">张若昀</li>
+				<li class="click_change_bgcolor">吴磊</li>
+			</ul>
+		</div>
+		<div id="player_list">
+			<a href="player.html" class="hdk-Player">
+				<div class="hdk-order"style="background-color:#ff3600" ><p>1</p></div>
+				<div class="hdk-chart"><img src="img/222.jpg"></div>
+				<div class="fullnames">
+					<div class="fullname">返回什么叫人身啥问题和热狗攻击我几乎无任何附属公司</div>
+				</div>
+				<p>12345<span>票</span></p>
+			</a>
+
+			<a href="player.html" class="hdk-Player">
+				<div class="hdk-order"style="background-color:#fe8a00" ><p>1</p></div>
+				<div class="hdk-chart"><img src="img/222.jpg"></div>
+				<div class="fullnames">
+					<div class="fullname">问题尤为</div>
+				</div>
+				<p>12345<span>票</span></p>
+			</a>
+			<a href="player.html" class="hdk-Player">
+				<div class="hdk-order" style="background-color:#ffd800 "><p>1</p></div>
+				<div class="hdk-chart"><img src="img/222.jpg"></div>
+				<div class="fullnames">
+					<div class="fullname">我回头我让他和</div>
+				</div>
+				<p>12345<span>票</span></p>
+			</a>
+			<a href="player.html" class="hdk-Player">
+				<div class="hdk-order"><p>1</p></div>
+				<div class="hdk-chart"><img src="img/222.jpg"></div>
+				<div class="fullnames">
+					<div class="fullname">台海问题翰威特核问题会谈认为</div>
+				</div>
+				<p>12345<span>票</span></p>
+			</a>
+			<a href="player.html" class="hdk-Player">
+				<div class="hdk-order"><p>1</p></div>
+				<div class="hdk-chart"><img src="img/222.jpg"></div>
+				<div class="fullnames">
+					<div class="fullname">为台湾</div>
+				</div>
+				<p>12345<span>票</span></p>
+			</a>
+		</div>
+		<div class="hdk-clicks" id="loaduser"><a>查看更多...</a></div>
+		<div class="hdk-lower-skin">
+			<div class="hdk-lower">
+				<a href="index.html">
+					<div class="hdk-menu">
+						<img src="img/home-page.png">
+						<p>首页</p>
+					</div>
+				</a>
+				<a href="rule.html">
+					<div class="hdk-menu">
+						<img src="img/rule.png">
+						<p>规则</p>
+					</div>
+				</a>
+				<a href="join.html">
+					<div class="hdk-menu">
+						<img src="img/sign-up.png">
+						<p>报名</p>
+					</div>
+				</a>
+				<a href="ranking.html">
+					<div class="hdk-menu">
+						<img src="img/Ranking-List.png">
+						<p>排行榜</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="hdk-hi-copyright">技术支持: 互动酷</div>
+		<div class="hdk-empty"></div>	
+	</div>	
+	</div>
+	<div class="hdk-Return-skin">
+		<div class="hdk-Return">
+			<div class="hdk-within">       
+        		<a href="#gettop"><img src="img/Top.png"></a>
+        	</div>	
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/player.js"></script>
+<script>
+    var pid = "**********";
+    var page = 1;
+	var gid = "41";
+    $(function () {
+        $('#user-list').empty();
+        $('#loaduser').click(function () {
+            if ($(this).hasClass('layui-btn-disabled')) {
+                return;
+            }
+            $("#loaduser").addClass('layui-btn-disabled');
+            $('#loaduser').text('加载中...');
+
+            var url = U('toupiao/ajax/gvu');
+            page = page + 1;
+            $.post(url, {page: page, gid:gid}, function (data) {
+                if (data.flag == 100) {
+                    $('.user-list').append(data.html);
+                    $("#loaduser").removeClass('layui-btn-disabled');
+                    $('#loaduser').text('加载更多');
+                } else {
+                    $('.user-list').append(data.html);
+                    $('#loaduser').text('没有更多了~');
+                }
+            }, 'json')
+        })
+    })
+    layui.use(['form'], function () {
+      var form = layui.form();
+      form.on('select(groupNav)', function (obj) {
+        var url = "后台" + obj.value;
+        location.href= url;
+      })
+    })
+</script>
+</html>
+ 
