@@ -99,7 +99,7 @@ input{width: 60%;border:none;font-size: 12px;outline:none;}
 .hdk-Ranking{margin-top:10px;max-width: 500px;border-bottom:2px solid #fb708b;text-align: center;display: -webkit-flex;-webkit-justify-content: space-around;clear: both;}
 .hdk-Ranking p{color: #fff;font-size: 16px;}
 .hdk-Ranking span{color: #fff;font-size: 14px;}
-.hdk-notice{height: 50px;border-bottom:1px solid #fb708b;display: -webkit-flex; align-items: center;}
+.hdk-notice{height: 50px;border-bottom:1px solid #fb708b;display: -webkit-flex; -webkit-align-items: center;}
 .hdk-notice>img{width: 32px;height:32px;margin: 0 10px;}
 .hdk-notice>p{font-size: 14px;color: #fff;-webkit-flex-grow: 1;}
 .hdk-Photo-wall{width: 96%;margin: 10px auto;background-color:rgba(255,255,255,0.1);border-radius: 5px;}
