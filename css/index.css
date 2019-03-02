@@ -93,7 +93,7 @@ input{width: 60%;border:none;font-size: 12px;outline:none;}
 .hdk-Serial-number{height: 20px;line-height: 21px;margin: 0 10px;background: #fff;border-radius: 15px;text-align: center;color: #f8597b;float: left;font-size: 14px;padding:0 8px;}
 .hdk-name{margin-top: 10px;width: 74%;height: 20px;}
 .hdk-name>p{color:#fff;font-size:16px;font-weight: 600;}
-.span{position: relative;width: 74%;height: 37px;float: left;overflow: hidden;font-size: 0.88em;margin: 5px auto;color: #fff;padding-right: 3%;}
+.span{position: relative;width: 74%;height: 40px;float: left;overflow: hidden;font-size: 0.88em;margin: 5px auto;color: #fff;padding-right: 3%;}
 .height{height: 100%;}
 .hide{width:15px;position: absolute;right: 4%;bottom: 3px;}
 .hdk-Ranking{margin-top:10px;max-width: 500px;border-bottom:2px solid #fb708b;text-align: center;display: -webkit-flex;-webkit-justify-content: space-around;clear: both;}
