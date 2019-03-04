@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>测试</title>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<style type="text/css">
+.swiper-container {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+		#audio-btn {
+		    position: absolute;
+		    top: 2px;
+		    left: 10px;
+		    z-index: 200;
+		    width: 50px;
+		    height: 50px;
+		}
+		.on {
+		    background: url(img/music.gif) no-repeat center/60px;
+		}
+		#audio-btn .rotate {
+		    position: absolute;
+		    width: 30px;
+		    height: 30px;
+		    background-image: url(img/music_off.png);
+		    background-size: 100% 100%;
+		    -webkit-animation: rotating 1.2s linear infinite;
+		    -moz-animation: rotating 1.2s linear infinite;
+		    -o-animation: rotating 1.2s linear infinite;
+		}
+		audio:not([controls]) {
+		    display: none;
+		    height: 0;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="audio-btn" class="audio-btn" style="background-color: red">
+	  <div class="rotate" style="transform: rotate(41395deg);"></div>
+	  <audio src="http://sc1.111ttt.cn/2016/1/12/10/205100120121.mp3" loop="loop" preload="preload" id="music" autoplay="autoplay">
+	    <source src="http://sc1.111ttt.cn/2016/1/12/10/205100120121.mp3" type="audio/mpeg"></audio>
+	</div>
+</body>
+<script type="text/javascript">$(function() {
+	    if ($("#audio-btn").length <= 0) {
+	      var bgmusic_icon = '<div style="position: fixed;height: 30px;width: 100%;top: 25px;max-width: 560px;z-index:2"><div id="audio-btn" class="audio-btn"><div class="rotate"></div><audio src="http://sc1.111ttt.cn/2016/1/12/10/205100120121.mp3" loop=loop preload=preload id="music"><source src="http://sc1.111ttt.cn/2016/1/12/10/205100120121.mp3" type="audio/mpeg"></audio></div><span onclick="modalShow_qrcode()" class="span_qrcode span_z_index" style="margin:2px 10px 0 0;float:right;height:100%"><img src="/hdk_2018_1_model/img/codebtn.png" height="100%"></span></div>';
+	      $("body").append(bgmusic_icon);
+	      $("#music").attr("autoplay", "autoplay")
+	    }
+	    function isWeiXin() {
+	      var ua = window.navigator.userAgent.toLowerCase();
+	      if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+	        return true;
+	      } else {
+	        return false;
+	      }
+	    }
+	    num = 0;
+	    var tl;
+	    x = 0;
+	    function refreshQuery() {
+	      x++;
+	      var transform = "rotate(" + x + "deg)";
+	      var ms = "rotate(" + x + "deg)";
+	      var webkit = "rotate(" + x + "deg)";
+	      var o = "rotate(" + x + "deg)";
+	      var moz = "rotate(" + x + "deg)";
+	      $(".rotate").css({
+	        "transform": transform,
+	        "-ms-transform": ms,
+	        "-webkit-transform": webkit,
+	        "-o-transform": o,
+	        "-moz-transform": moz
+	      });
+	    }
+	    $("#audio-btn").addClass("on");
+	    tl = setInterval(refreshQuery, 10);
+	    if (isWeiXin()) {
+	      wx.ready(function() {
+	        document.getElementById("music").play();
+	      });
+	    }
+	    $("#audio-btn").click(function() {
+	      var myAudio = document.getElementById("music");
+	      if ($(this).is(".on")) {
+	        $(this).removeClass("on");
+	        clearInterval(tl);
+	        myAudio.pause();
+	      } else {
+	        $(this).addClass("on");
+	        tl = setInterval(refreshQuery, 10);
+	        myAudio.play();
+	      }
+	    });
+	  })
+	</script>
+</html>
