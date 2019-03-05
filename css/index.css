@@ -1,7 +1,7 @@
 *{margin: 0px;padding: 0px;}
 a{text-decoration: none;}
 li{list-style: none;}
-body{font-family: Helvetica Neue,Helvetica,PingFang SC,\5FAE\8F6F\96C5\9ED1,Tahoma,Arial,sans-serif;max-width:500px;min-width:320px; margin: 0 auto;position: relative;}
+body{font-family: Helvetica Neue,Helvetica,PingFang SC,\5FAE\8F6F\96C5\9ED1,Tahoma,sans-serif;max-width:500px;min-width:320px; margin: 0 auto;position: relative;}
 .hdk-Player{position: relative;box-sizing: border-box;padding-left: 29%; margin-top: 5px;width:96%;background: #fff;border-radius: 5px;display: inline-block;}
 .hdk-active span{color:#fff;}
 /*--index样式--*/
@@ -37,7 +37,7 @@ body{font-family: Helvetica Neue,Helvetica,PingFang SC,\5FAE\8F6F\96C5\9ED1,Taho
 .hdk-information>.box>p{float: right;font-size: 14px;color: #f97c97;line-height: 25px;}
 .hdk-information>.box>h5{float: left;display: inline-block;margin: 2px auto;color:#8a8a8a;}
 .hdk-information{position: relative; padding: 0px 5%;}
-.hdk-information>button{width: 100%;height: 25px;/*background: linear-gradient(to right, rgba(247,71,109,0.9),rgba(254,89,95,1));*/border:none;border-radius: 4px;color: #fff;margin-bottom: 10px;margin: 10px auto;}
+.hdk-information>button{width: 100%;height: 25px;background: linear-gradient(to right, rgba(247,71,109,0.9),rgba(254,89,95,1));border:none;border-radius: 4px;color: #fff;margin-bottom: 10px;margin: 10px auto;}
 .hdk-information>img{width: 25px;position: absolute;top: 40px;left: 20%;}
 /*---end---*/
 /*--join 样式--*/
